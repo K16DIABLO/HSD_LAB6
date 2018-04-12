@@ -11,7 +11,7 @@ int main(int argc, char** argv)
   int i;
 
   int foo = open("/dev/mem", O_RDWR);
-  int *fpga_bram = mmap(NULL, SIZE * sizeof(int), PROT_READ|PROT_WRITE, MAP_SHARED, foo, 0x40000000);
+  int *fpga_bram = mmap(NULL, 2 * SIZE * sizeof(int), PROT_READ|PROT_WRITE, MAP_SHARED, foo, 0x40000000);
   int *fpga_ip   = mmap(NULL, sizeof(int), PROT_READ|PROT_WRITE, MAP_SHARED, foo, 0x43C00000);
 
   // initialize memory
